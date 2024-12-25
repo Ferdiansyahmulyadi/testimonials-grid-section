@@ -1,0 +1,364 @@
+@use 'base';
+@use 'functions' as *;
+@use 'mixins' as *;
+
+body {
+  background-color: get-color('neutral', 'light grayish blue');
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, min-max(rem-calc(255), 1fr));
+  // grid-template-columns: rem-calc(255) rem-calc(255) rem-calc(255) rem-calc(255);
+  // grid-template-rows: rem-calc(266) rem-calc(266);
+  gap: rem-calc(24) rem-calc(30);
+  padding: 0 rem-calc(24); //remove this line in desktop view
+  // margin: rem-calc(164) auto;
+  margin: rem-calc(71) auto; //remove this line in desktop view
+
+  .grid-box {
+    min-width: rem-calc(327); //remove this line in desktop view
+    padding-top: rem-calc(26);
+    padding-bottom: rem-calc(32);
+    padding-left: rem-calc(32);
+    padding-right: rem-calc(32);
+    border: 0px solid #979797;
+    border-radius: rem-calc(8);
+    box-shadow: rem-calc(40) rem-calc(60) rem-calc(50) rem-calc(-47)
+      rgba($color: #48556a, $alpha: 0.2474);
+
+    .user-profile {
+      width: fit-content;
+      height: fit-content;
+      display: flex;
+      align-items: center;
+      gap: rem-calc(17);
+
+      .img-profile {
+        width: rem-calc(28);
+        height: rem-calc(28);
+        border-radius: 50%;
+        border: rem-calc(2) solid #a775f1;
+      }
+
+      .user-info {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem-calc(4);
+
+        .user-name {
+          @include typography('barlow-semi-condensed-medium-h4');
+          color: get-color('base', 'white');
+        }
+
+        .user-status {
+          @include typography('barlow-semi-condensed-medium-paragraph');
+          color: get-color('base', 'white');
+          opacity: 0.5;
+        }
+      }
+    }
+
+    h1 {
+      @include typography('barlow-semi-condensed-semibold-h1');
+      margin-top: rem-calc(18);
+    }
+
+    .testimonial-paragraph {
+      @include typography('barlow-semi-condensed-medium-h3');
+      opacity: 0.7;
+      margin-top: rem-calc(16);
+    }
+  }
+
+  .daniel-clifford {
+    // grid-column: 1 / 3;
+    // grid-row: 1 / 1;
+    background-color: get-color('primary', 'moderate violet');
+
+    .highlighted-user {
+      display: flex;
+      justify-content: space-between;
+
+      .image-quote {
+        margin-top: rem-calc(-26);
+        // margin-right: rem-calc(48);
+        margin-right: rem-calc(-8); //remove this line in desktop view
+      }
+    }
+
+    h1 {
+      color: get-color('base', 'white');
+      margin-top: rem-calc(-36);
+    }
+
+    .testimonial-paragraph {
+      color: get-color('neutral', 'light gray');
+      margin-top: rem-calc(40); //remove this line in desktop view
+    }
+  }
+
+  .jonathan-walters {
+    // grid-column: 3 / 4;
+    // grid-row: 1 / 1;
+    background-color: get-color('primary', 'very dark grayish blue');
+
+    h1 {
+      color: get-color('base', 'white');
+    }
+
+    .testimonial-paragraph {
+      color: get-color('base', 'white');
+    }
+  }
+
+  .jeanette-harmon {
+    // grid-column: 1 / 1;
+    // grid-row: 2 / 2;
+    background-color: get-color('base', 'white');
+
+    .user-profile {
+      .user-info {
+        .user-name {
+          color: get-color('primary', 'very dark grayish blue');
+        }
+
+        .user-status {
+          color: get-color('primary', 'very dark grayish blue');
+        }
+      }
+    }
+
+    h1 {
+      color: get-color('primary', 'very dark grayish blue');
+    }
+
+    .testimonial-paragraph {
+      color: get-color('primary', 'very dark grayish blue');
+    }
+  }
+
+  .patrick-abrams {
+    // grid-column: 2 / 4;
+    // grid-row: 2 / 2;
+    background-color: get-color('primary', 'very dark blackish blue');
+
+    h1 {
+      color: get-color('neutral', 'light grayish blue');
+    }
+
+    .testimonial-paragraph {
+      color: get-color('base', 'white');
+    }
+  }
+
+  .kira-whittle {
+    // grid-column: 4 / 4;
+    // grid-row: 1 / 3;
+    background-color: get-color('base', 'white');
+
+    .user-profile {
+      .user-info {
+        .user-name {
+          color: get-color('primary', 'very dark grayish blue');
+        }
+
+        .user-status {
+          color: get-color('primary', 'very dark grayish blue');
+        }
+      }
+    }
+
+    h1 {
+      color: get-color('primary', 'very dark grayish blue');
+    }
+
+    .testimonial-paragraph {
+      color: get-color('primary', 'very dark grayish blue');
+    }
+  }
+}
+
+@include tablet {
+  .container {
+    display: grid;
+    grid-template-columns: rem-calc(255) rem-calc(255) rem-calc(255) rem-calc(
+        255
+      );
+    grid-template-rows: rem-calc(266) rem-calc(266);
+    gap: rem-calc(24) rem-calc(30);
+    padding: 0;
+    margin: rem-calc(164) auto;
+
+    .grid-box {
+      min-width: rem-calc(255); //remove this line in desktop view
+      padding-top: rem-calc(26);
+      padding-bottom: rem-calc(32);
+      padding-left: rem-calc(32);
+      padding-right: rem-calc(32);
+      border: 0px solid #979797;
+      border-radius: rem-calc(8);
+      box-shadow: rem-calc(40) rem-calc(60) rem-calc(50) rem-calc(-47)
+        rgba($color: #48556a, $alpha: 0.2474);
+
+      .user-profile {
+        width: fit-content;
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        gap: rem-calc(17);
+
+        .img-profile {
+          width: rem-calc(28);
+          height: rem-calc(28);
+          border-radius: 50%;
+          border: rem-calc(2) solid #a775f1;
+        }
+
+        .user-info {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: rem-calc(4);
+
+          .user-name {
+            @include typography('barlow-semi-condensed-medium-h4');
+            color: get-color('base', 'white');
+          }
+
+          .user-status {
+            @include typography('barlow-semi-condensed-medium-paragraph');
+            color: get-color('base', 'white');
+            opacity: 0.5;
+          }
+        }
+      }
+
+      h1 {
+        @include typography('barlow-semi-condensed-semibold-h1');
+        margin-top: rem-calc(18);
+      }
+
+      .testimonial-paragraph {
+        @include typography('barlow-semi-condensed-medium-h3');
+        opacity: 0.7;
+        margin-top: rem-calc(16);
+      }
+    }
+
+    .daniel-clifford {
+      grid-column: 1 / 3;
+      grid-row: 1 / 1;
+      background-color: get-color('primary', 'moderate violet');
+
+      .highlighted-user {
+        display: flex;
+        justify-content: space-between;
+
+        .image-quote {
+          margin-top: rem-calc(-26);
+          margin-right: rem-calc(48);
+        }
+      }
+
+      h1 {
+        color: get-color('base', 'white');
+        margin-top: rem-calc(-36);
+      }
+
+      .testimonial-paragraph {
+        color: get-color('neutral', 'light gray');
+      }
+    }
+
+    .jonathan-walters {
+      grid-column: 3 / 4;
+      grid-row: 1 / 1;
+      background-color: get-color('primary', 'very dark grayish blue');
+
+      h1 {
+        color: get-color('base', 'white');
+      }
+
+      .testimonial-paragraph {
+        color: get-color('base', 'white');
+      }
+    }
+
+    .jeanette-harmon {
+      grid-column: 1 / 1;
+      grid-row: 2 / 2;
+      background-color: get-color('base', 'white');
+
+      .user-profile {
+        .user-info {
+          .user-name {
+            color: get-color('primary', 'very dark grayish blue');
+          }
+
+          .user-status {
+            color: get-color('primary', 'very dark grayish blue');
+          }
+        }
+      }
+
+      h1 {
+        color: get-color('primary', 'very dark grayish blue');
+      }
+
+      .testimonial-paragraph {
+        color: get-color('primary', 'very dark grayish blue');
+      }
+    }
+
+    .patrick-abrams {
+      grid-column: 2 / 4;
+      grid-row: 2 / 2;
+      background-color: get-color('primary', 'very dark blackish blue');
+
+      h1 {
+        color: get-color('neutral', 'light grayish blue');
+      }
+
+      .testimonial-paragraph {
+        color: get-color('base', 'white');
+      }
+    }
+
+    .kira-whittle {
+      grid-column: 4 / 4;
+      grid-row: 1 / 3;
+      background-color: get-color('base', 'white');
+
+      .user-profile {
+        .user-info {
+          .user-name {
+            color: get-color('primary', 'very dark grayish blue');
+          }
+
+          .user-status {
+            color: get-color('primary', 'very dark grayish blue');
+          }
+        }
+      }
+
+      h1 {
+        color: get-color('primary', 'very dark grayish blue');
+      }
+
+      .testimonial-paragraph {
+        color: get-color('primary', 'very dark grayish blue');
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+
+  a {
+    color: hsl(228, 45%, 44%);
+  }
+}

@@ -1,0 +1,20 @@
+@use '../functions' as *;
+@use '../variables' as *;
+@use 'sass:map';
+
+//prettier-ignore
+$text-presets: (
+  'barlow-semi-condensed-semibold-h1': ('font-family': "Barlow Semi Condensed", 'font-weight': 600, 'font-size': rem-calc(20), 'line-height': 125%, 'letter-spacing': 0px),
+  'barlow-semi-condensed-medium-h4': ('font-family': "Barlow Semi Condensed", 'font-weight': 500, 'font-size': rem-calc(13), 'line-height': rem-calc(13), 'letter-spacing': 0px),
+  'barlow-semi-condensed-medium-h3': ('font-family': "Barlow Semi Condensed", 'font-weight': 500, 'font-size': rem-calc(13), 'line-height': rem-calc(18), 'letter-spacing': 0px),
+  'barlow-semi-condensed-medium-paragraph': ('font-family': "Barlow Semi Condensed", 'font-weight': 500, 'font-size': rem-calc(11), 'line-height': rem-calc(11), 'letter-spacing': 0px)
+);
+
+@mixin typography($text-preset) {
+  $preset: map.get($text-presets, $text-preset);
+  font-family: map.get($preset, 'font-family');
+  font-weight: map.get($preset, 'font-weight');
+  font-size: map.get($preset, 'font-size');
+  line-height: map.get($preset, 'line-height');
+  letter-spacing: map.get($preset, 'letter-spacing');
+}
